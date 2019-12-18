@@ -1,0 +1,1698 @@
+<h1><a id="_Toc468453825"></a><a id="OLE_LINK11"></a><a id="OLE_LINK12"></a><a id="OLE_LINK30"></a><a
+    id="OLE_LINK31"></a><strong>SQL Server Test Suite Common Deployment Guide</strong></h1>
+<p>Microsoft Corporation<a id="_Toc208205921"></a><a id="_Toc208205702"></a><a id="_Toc208137753"></a><a
+    id="_Toc204576606"></a><a id="_Toc204053363"></a><a id="_Toc202286173"></a><a id="_Toc202285991"></a><a
+    id="_Toc202285051"></a><a id="_Toc191231917"></a><a id="_Toc174967732"></a><a id="_Toc208222224"></a></p>
+<p>Published: 12 December 2019</p>
+<h1><a id="_Toc208039941"></a><a id="_Toc468453826"></a><strong>Abstract</strong></h1>
+<p>This document provides an overview and step-by-step graphical interpretation to setup the basic test environment for
+  deploying protocol test suite.</p>
+<p><img src="./html_doc_images/img_0.jpg" alt="DocCoverBottom" /></p>
+<p><a href="#_Toc468453825">SQL Server Test Suite Common Deployment Guide 1</a></p>
+<p><a href="#_Toc468453826">Abstract 1</a></p>
+<p><a href="#_Toc468453827">1 Operation System Configuration 4</a></p>
+<p><a href="#_Toc468453828">1.1 How to install Active Directory Domain Services on Windows 2012 R2 4</a></p>
+<p><a href="#_Toc468453829">1.2 How to join a domain 21</a></p>
+<p><a href="#_Toc468453830">1.3 How to Create a Domain User Account on DC 25</a></p>
+<p><a href="#_Toc468453831">1.4 How to turn off Windows Firewall 27</a></p>
+<p><a href="#_Toc468453832">1.5 How to install Powershell 2.0 29</a></p>
+<p><a href="#_Toc468453833">1.6 How to configure the PowerShell policy 31</a></p>
+<p><a href="#_Toc468453834">1.7 How to configure Static IP Address 34</a></p>
+<p><a href="#_Toc468453835">1.8 How to configure Windows Remote Management 39</a></p>
+<p><a href="#_Toc468453836">2 SQL Server Installation 40</a></p>
+<p><a href="#_Toc468453837">2.1 How to install Microsoft SQL Server 2008 Enterprise SP1 40</a></p>
+<p><a href="#_Toc468453838">2.2 How to install Microsoft SQL 2008 Enterprise R2 65</a></p>
+<p><a href="#_Toc468453839">2.3 How to install SQL Server Denali CTP3 85</a></p>
+<p><a href="#_Toc468453840">2.4 How to install Microsoft SQL Server 2012 RC0 106</a></p>
+<p><a href="#_Toc468453841">2.5 How to install Microsoft SQL Server 2016 RC3 130</a></p>
+<p><a href="#_Toc468453842">3 SQL Server Configuration 151</a></p>
+<p><a href="#_Toc468453843">3.1 Configure the MSSQLSERVER Properties 151</a></p>
+<p><a href="#_Toc468453844">4 Protocol Test Suite Tools Installation 155</a></p>
+<p><a href="#_Toc468453845">4.1 How to install Visual Studio Team System 2008 155</a></p>
+<p><a href="#_Toc468453846">4.2 How to Install Visual Studio 158</a></p>
+<p><a href="#_Toc468453847">4.3 How to install .NET Framework 165</a></p>
+<p><a href="#_Toc468453848">4.4 How to install Microsoft Network Monitor 3.4 172</a></p>
+<p><a href="#_Toc468453849">4.5 How to Install Protocol Test Framework 179</a></p>
+<p><a href="#_Toc468453850">4.6 How to Install Protocol Test Suites Library 182</a></p>
+<p><a href="#_Toc468453851">4.7 How to Install Spec Explorer 184</a></p>
+<p><a href="#_Toc468453852">4.8 How to replace Protocol Test Framework Reference Assemblies 186</a></p>
+<p><a href="#_Toc468453853">4.9 How to install Microsoft SharePoint Server 2010 SP1 for Farm Installation 196</a></p>
+<p><a href="#_Toc468453854">4.10 How to Install Message Analyzer 204</a></p>
+<h1><a id="_How_to_install_4"></a><a id="_How_to_install_8"></a><a id="_Toc468453827"></a><a id="_Toc199851846"></a><a
+    id="_Toc202285078"></a><a id="_Toc204053386"></a><a id="_Toc205352703"></a><a id="_Toc208137788"></a><a
+    id="_Toc208205715"></a><a id="_Toc208205934"></a><a id="_Toc208222243"></a><a id="_Toc221709628"></a>Operation
+  System Configuration</h1>
+<p>The section lists some common configuration about the operation System. </p>
+<h2><a id="_Toc468453828"></a>How to install Active Directory Domain Services on Windows 2012 R2</h2>
+<ol>
+  <li>Click <strong>Add roles and features </strong>of Dashboard on Server Manager.</li>
+</ol>
+<p><img src="./html_doc_images/img_1.jpg" /></p>
+<ol>
+  <li>Click <strong>Next</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_2.jpg" /></p>
+<ol>
+  <li>Keep the default selection and click <strong>Next</strong>.<img src="./html_doc_images/img_3.jpg" /></li>
+  <li>Click <strong>Next</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_4.jpg" /></p>
+<ol>
+  <li>Select Server roles <strong>Active Directory Domain Services.</strong></li>
+</ol>
+<p><img src="./html_doc_images/img_5.jpg" /></p>
+<ol>
+  <li>Click <strong>Add Features</strong>.<img src="./html_doc_images/img_6.jpg" /></li>
+  <li>Click <strong>Next</strong>.<img src="./html_doc_images/img_7.jpg" /></li>
+  <li>Click <strong>Next</strong>. <img src="./html_doc_images/img_8.jpg" /></li>
+  <li>Click <strong>Next</strong>. <img src="./html_doc_images/img_9.jpg" /></li>
+  <li>Click <strong>Install </strong>to start the installation. <img src="./html_doc_images/img_10.jpg" /></li>
+  <li>After installing finished, click the warning icon on the Server Manager Dashboard. Then click <strong>Promote the
+      server to a domain Controller</strong>. <img src="./html_doc_images/img_11.jpg" /></li>
+  <li>Select <strong>Add a new forest</strong>, type the FQDN of the forest root domain name (For example:
+    <strong>Contoso.com</strong>). Click <strong>Next</strong>. <img src="./html_doc_images/img_12.jpg" /></li>
+  <li>Type password (For example: <strong>Password01!</strong>) and click <strong>Next</strong>.<img
+      src="./html_doc_images/img_13.jpg" /></li>
+  <li>Click <strong>Next </strong>(ignore the warning).<img src="./html_doc_images/img_14.jpg" /></li>
+  <li>Click <strong>Next</strong>.<img src="./html_doc_images/img_15.jpg" /></li>
+  <li>Use the default folders. Click <strong>Next</strong>.<img src="./html_doc_images/img_16.jpg" /></li>
+  <li>Click <strong>Next</strong>.<img src="./html_doc_images/img_17.jpg" /></li>
+  <li>Click <strong>Install</strong>.<img src="./html_doc_images/img_18.jpg" /></li>
+  <li>Restart the computer after finished.</li>
+</ol>
+<h2><a id="_Toc468453829"></a>How to join a domain</h2>
+<p>Below process uses the Windows 2008 R2 as an example, Windows 7 is the same steps.</p>
+<ol>
+  <li>Type <strong>Win+X</strong>, Click <strong>Y</strong>, open computer system information page.</li>
+</ol>
+<p><img src="./html_doc_images/img_19.jpg" /></p>
+<ol>
+  <li>Under <strong>Computer name, domain, and workgroup settings</strong>, click <strong>Change settings</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_20.jpg" /></p>
+<ol>
+  <li>Click <strong>Change…</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_21.jpg" /></p>
+<ol>
+  <li>Select <strong>Domain</strong>, type the domain name you want to join, click <strong>OK</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_22.jpg" /></p>
+<ol>
+  <li>Type an existent domain user credential, click <strong>OK</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_23.jpg" /></p>
+<ol>
+  <li>Click <strong>OK</strong> and then restart computer to apply the change.</li>
+</ol>
+<p><img src="./html_doc_images/img_24.jpg" /></p>
+<h2><a id="_Toc295725368"></a><a id="_Toc468453830"></a>How to Create a Domain User Account on DC</h2>
+<ol>
+  <li>Click<strong> Start</strong>-&gt;<strong>Administrative Tools</strong>-&gt;<strong>Active Directory User and
+      Computers</strong> and then <strong>new</strong> a user to contoso.com(Domain name depends on actual value)</li>
+</ol>
+<p><strong><img src="./html_doc_images/img_25.jpg" alt="C:\Users\v-guojli.FAREAST\Pictures\1.jpg" /></strong></p>
+<ol>
+  <li><strong>New</strong> the user name as “User_name” (Note: Valid User logon name should be the name circled as
+    below)</li>
+</ol>
+<p><img src="./html_doc_images/img_26.jpg" /></p>
+<ol>
+  <li>Click <strong>next</strong> and then input the password as needed and Check <strong>Password never
+      expire</strong>, click <strong>OK</strong> when a new dialog is opened.</li>
+</ol>
+<p><img src="./html_doc_images/img_27.jpg" /></p>
+<ol>
+  <li>Click <strong>Next</strong> and then click <strong>Finish</strong> to complete.</li>
+</ol>
+<p><img src="./html_doc_images/img_28.jpg" /></p>
+<h2><a id="_Toc468453831"></a>How to turn off Windows Firewall</h2>
+<p>Below process uses the Windows 2008 R2 as an example, the same steps apply to Windows 7.</p>
+<ol>
+  <li>Click <strong>Start</strong> Menu, and click <strong>Run...</strong>.</li>
+  <li>Enter <strong>firewall.cpl</strong> in <strong>Run</strong> dialog box and click <strong>OK</strong> to open the
+    <strong>Windows Firewall </strong>window.</li>
+</ol>
+<p><img src="./html_doc_images/img_29.jpg" alt="2.jpg" /></p>
+<ol>
+  <li>Click <strong>Turn Windows firewall on or off</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_30.jpg" alt="C:\Users\v-ww\Desktop\2.jpg" /></p>
+<ol>
+  <li>Please select <strong>Turn off Windows Firewall (not recommended)</strong>, then click<strong> OK</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_31.jpg" alt="C:\Users\v-ww\Desktop\1.jpg" /><a id="_How_to_join"></a><a
+    id="_4.2_How_to"></a></p>
+<h2><a id="_Toc295725373"></a><a id="_Toc468453832"></a>How to install Powershell 2.0</h2>
+<ol>
+  <li>Double click <strong>PowerShell_Setup.msi</strong>.</li>
+  <li>Click <strong>Next</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_32.jpg" /></p>
+<ol>
+  <li>Please read the following license agreement carefully, if you accept the license agreement, please choose
+    <strong>I accept the terms in the license agreement</strong>, and then click <strong>Next</strong>. (If you select
+    <strong>I do not accept the terms in the license agreement</strong>, Windows PowerShell Setup Wizard will be ended
+    and you will not able to install it successfully.)</li>
+</ol>
+<p><img src="./html_doc_images/img_33.jpg" /></p>
+<ol>
+  <li>Click <strong>Install</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_34.jpg" /></p>
+<ol>
+  <li>Click <strong>Finish</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_35.jpg" /></p>
+<p><strong>Notice:</strong></p>
+<ul>
+  <li>On Windows Server 2008, install a package (KB968930) after complete Power Shell installation.</li>
+  <li>Get the package from:</li>
+  <li>Windows6.0-KB968930-x86.msu for 32-bit Operating System</li>
+</ul>
+<p><a
+    href="http://www.microsoft.com/downloads/details.aspx?FamilyId=863e7d01-fb1b-4d3e-b07d-766a0a2def0b&amp;displaylang=en">http://www.microsoft.com/downloads/details.aspx?FamilyId=863e7d01-fb1b-4d3e-b07d-766a0a2def0b&amp;displaylang=en</a>
+</p>
+<ul>
+  <li>Windows6.0-KB968930-x64.msu for 64-bit Operating System</li>
+</ul>
+<p><a
+    href="http://www.microsoft.com/downloads/details.aspx?familyid=D37E25CF-DB05-4B23-A852-CDF865D81B82&amp;displaylang=en">http://www.microsoft.com/downloads/details.aspx?familyid=D37E25CF-DB05-4B23-A852-CDF865D81B82&amp;displaylang=en</a>
+</p>
+<ul>
+  <li> After you install this item, you may have to restart your computer.</li>
+</ul>
+<h2><a id="_Toc468453833"></a>How to <a id="_Hlk499816636"></a>configure the PowerShell policy</h2>
+<ol>
+  <li>Click <strong>Start</strong>-&gt;<strong>All Programs</strong>.</li>
+</ol>
+<p><strong><img src="./html_doc_images/img_36.jpg" alt="C:\Users\v-ww\Desktop\4.13\11.jpg" /></strong></p>
+<ol>
+  <li>Click <strong>Accessories</strong>-&gt;<strong>Windows PowerShell</strong>.</li>
+</ol>
+<p><strong><img src="./html_doc_images/img_37.jpg" alt="C:\Users\v-ww\Desktop\4.13\22.jpg" /></strong></p>
+<ol>
+  <li>Right-click <strong>Windows PowerShell (x86) </strong>console, click <strong>Run as administrator</strong>. </li>
+</ol>
+<p><strong>NOTE: </strong>If server machine is x64, choose <strong>Windows PowerShell (x86) </strong>console.</p>
+<p><strong><img src="./html_doc_images/img_38.jpg" alt="C:\Users\v-ww\Desktop\4.13\33.jpg" /></strong></p>
+<ol>
+  <li>Type two commands in <strong>Windows PowerShell (x86)</strong> console:</li>
+  <li><strong>Set-ExecutionPolicy RemoteSigned</strong></li>
+  <li><strong>Enable-PSRemoting</strong></li>
+</ol>
+<p><img src="./html_doc_images/img_39.jpg" alt="C:\Users\v-ww\Desktop\4.13\44.jpg" /></p>
+<ol>
+  <li>Follow above steps to configure the <strong>Windows PowerShell</strong> console<strong>.</strong></li>
+  <li>Type the command in <strong>Windows PowerShell (x86)</strong> console:</li>
+  <li><strong>Set-Item WSMan:\localhost\Shell\MaxMemoryPerShellMB 500</strong></li>
+</ol>
+<p><img src="./html_doc_images/img_40.jpg" /></p>
+<ol>
+  <li>Follow above step to increase the <strong>default allocated memory for Windows PowerShell </strong>to<strong>
+      500M.</strong></li>
+</ol>
+<h2><a id="_Toc468453834"></a>How to configure Static IP Address</h2>
+<ol>
+  <li>Click <strong>Start</strong>, and then click <strong>Control Panel</strong>. </li>
+  <li>In <strong>Control Panel</strong>, verify that <strong>Small icons</strong> is selected, and then click
+    <strong>Network and Sharing Center</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_41.jpg" /></p>
+<ol>
+  <li>In <strong>Network and Sharing Center,</strong> click <strong>Local Area Connections</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_42.jpg" /></p>
+<ol>
+  <li>In <strong>Local Area Connections Status</strong>, click <strong>Properties</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_43.jpg" /></p>
+<ol>
+  <li>In <strong>Local Area Connection Properties</strong>, in <strong>This connection uses the following
+      items</strong>, select <strong>Internet Protocol Version 4 (TCP/IPv4)</strong>, and then click
+    <strong>Properties</strong>. The <strong>Internet Protocol Version 4 (TCP/IPv4) Properties</strong> dialog box
+    opens.</li>
+</ol>
+<p><img src="./html_doc_images/img_44.jpg" /></p>
+<ol>
+  <li>In <strong>Internet Protocol Version 4 (TCP/IPv4) Properties</strong>, on the <strong>General</strong> tab, click
+    <strong>Use the following IP address</strong>. In <strong>IP address</strong>, type the IP address that you want to
+    use. Press tab to place the cursor in <strong>Subnet mask</strong>. A default value for subnet mask is entered
+    automatically. Either accept the default subnet mask, or type the subnet mask that you want to use. In
+    <strong>Default gateway</strong>, type the IP address of your default gateway. In <strong>Preferred DNS
+      server</strong>, type the IP address of your DNS server. If you plan to use the local computer as the preferred
+    DNS server, type the IP address of the local computer. In <strong>Alternate DNS Server</strong>, type the IP address
+    of your alternate DNS server, if any. If you plan to use the local computer as an alternate DNS server, type the IP
+    address of the local computer. Click <strong>OK</strong>, and then click <strong>Close</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_45.jpg" /></p>
+<ol>
+  <li>Back to <strong>step 5</strong>, In <strong>Local Area Connection Properties</strong>, select <strong>Internet
+      Protocol Version 6 (TCP/IPv6)</strong>, and then click <strong>Properties</strong>. The <strong>Internet Protocol
+      Version 6 (TCP/IPv6)</strong> <strong>Properties</strong> dialog box opens.</li>
+  <li>In <strong>Internet Protocol Version 6 (TCP/IPv6) Properties</strong>, on the <strong>General</strong> tab, click
+    <strong>Use the following IPv6 address</strong>. In <strong>IPv6 address</strong>, type the IPv6 address that you
+    want to use. Press tab to place the cursor in <strong>Subnet prefix length</strong>. A default value for subnet mask
+    is entered automatically. Either accept the default subnet prefix length, or type the prefix length that you want to
+    use. In <strong>Default gateway</strong>, type the IP address of your default gateway. In <strong>Preferred DNS
+      server</strong>, type the IP address of your DNS server. If you plan to use the local computer as the preferred
+    DNS server, type the IP address of the local computer. In <strong>Alternate DNS Server</strong>, type the IP address
+    of your alternate DNS server, if any. If you plan to use the local computer as an alternate DNS server, type the IP
+    address of the local computer. Click <strong>OK</strong>, and then click <strong>Close</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_46.jpg" /></p>
+<h2><a id="_Toc295725374"></a><a id="_Toc468453835"></a>How to configure Windows Remote Management</h2>
+<ol>
+  <li>Click <strong>Start-&gt;Accessories-&gt; Command Prompt</strong>.</li>
+  <li>Type command: <strong>winrm quickconfig.</strong></li>
+</ol>
+<p><img src="./html_doc_images/img_47.jpg" /></p>
+<ol>
+  <li>Then type <strong>Y.</strong></li>
+</ol>
+<p><img src="./html_doc_images/img_48.jpg" /></p>
+<p><a id="_How_to_install_1"></a><a id="_How_to_install"></a></p>
+<h1><a id="_Toc468453836"></a>SQL Server Installation</h1>
+<p>The section lists four installation methods against four SQL Servers on Windows 2008 R2, please click the below
+  hyperlinks to see the detailed subsection.</p>
+<table>
+  <tr>
+    <td>
+      <p><strong>Products</strong></p>
+    </td>
+    <td>
+      <p><strong>Operating System</strong></p>
+    </td>
+    <td>
+      <p><strong>Installation Type</strong></p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <p>Microsoft SQL Server 2008 Enterprise SP1</p>
+    </td>
+    <td>
+      <p>Windows Server 2008 Enterprise R2 x64</p>
+    </td>
+    <td>
+      <p><a href="#_How_to_install_13">Basic Installation</a></p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <p>Microsoft SQL Server 2008 Enterprise R2</p>
+    </td>
+    <td>
+      <p>Windows Server 2008 Enterprise R2 x64</p>
+    </td>
+    <td>
+      <p><a href="#_How_to_install_14">Basic Installation</a></p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <p>Microsoft SQL Server Denali CTP3</p>
+    </td>
+    <td>
+      <p>Windows Server 2008 Enterprise R2 x64</p>
+    </td>
+    <td>
+      <p><a href="#_How_to_install_15">Basic Installation</a></p>
+    </td>
+  </tr>
+</table>
+<h2><a id="_How_to_install_7"></a><a id="_How_to_install_10"></a><a id="_How_to_install_11"></a><a
+    id="_How_to_install_12"></a><a id="_How_to_install_13"></a><a id="_Toc281571835"></a><a id="_Toc468453837"></a>How
+  to install Microsoft SQL Server 2008 Enterprise SP1</h2>
+<h3>Install .NET Framework 3.5.1 </h3>
+<ol>
+  <li>Go to <strong>Start</strong>-&gt;<strong>All Programs</strong>-&gt;<strong>Administrative
+      Tools</strong>-&gt;<strong>Server Manager</strong>-&gt;<strong>Features</strong>-&gt;<strong>Add
+      Features</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_49.jpg" /></p>
+<ol>
+  <li>Select <strong>.NET Framework 3.5.1</strong> <strong>Features</strong> dialog box.</li>
+</ol>
+<p><img src="./html_doc_images/img_50.jpg" /></p>
+<ol>
+  <li>Click <strong>Add Required Roles Services </strong>in pop-up window.</li>
+</ol>
+<p><img src="./html_doc_images/img_51.jpg" /></p>
+<ol>
+  <li>Click <strong>Next </strong>in <strong>Add Features Wizard</strong> dialog box.</li>
+</ol>
+<p><img src="./html_doc_images/img_52.jpg" /></p>
+<ol>
+  <li>Click <strong>Next</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_53.jpg" /></p>
+<ol>
+  <li>Click <strong>Next.</strong></li>
+</ol>
+<p><img src="./html_doc_images/img_54.jpg" /></p>
+<ol>
+  <li>Click <strong>Install.</strong></li>
+</ol>
+<p><img src="./html_doc_images/img_55.jpg" /></p>
+<ol>
+  <li>Click <strong>Close </strong>to finish installation.</li>
+</ol>
+<p><img src="./html_doc_images/img_56.jpg" /></p>
+<h3>Install Web Server (IIS7.0) role</h3>
+<ol>
+  <li>Click <strong>Start</strong>-&gt;<strong>Administrative Tools</strong>-&gt;<strong>Server
+      Manager</strong>-&gt;<strong>Roles</strong>-&gt;<strong>Add Roles</strong>, select <strong>Web Server (IIS)
+    </strong>in <strong>Select Server Roles </strong>dialog box, Click <strong>Next</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_57.jpg" /></p>
+<ol>
+  <li>Click <strong>Next</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_58.jpg" /></p>
+<ol>
+  <li>Select <strong>Web Server (IIS)</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_59.jpg" /></p>
+<ol>
+  <li>Click <strong>Next </strong>in <strong>Web Server (IIS)</strong> dialog box.</li>
+</ol>
+<p><img src="./html_doc_images/img_60.jpg" /></p>
+<ol>
+  <li>Select <strong>all components </strong>in <strong>Select</strong> <strong>Role Services </strong>dialog box, click
+    <strong>Next.</strong><img src="./html_doc_images/img_61.jpg" /></li>
+  <li>Click <strong>Install.</strong></li>
+</ol>
+<p><img src="./html_doc_images/img_62.jpg" /></p>
+<ol>
+  <li>Click <strong>Close </strong>to finish installation.<img src="./html_doc_images/img_63.jpg" /></li>
+</ol>
+<h3>Install Microsoft SQL Server 2008 Enterprise</h3>
+<p><strong>Note</strong>: There are two patches for Microsoft SQL Server 2008: SQLServer2008SP1-KB968369-x64-ENU and
+  SQLServer2008-KB970315-x64.</p>
+<ol>
+  <li>Double click <strong>setup.exe </strong>to start installation.</li>
+  <li>Click <strong>Installation-&gt; New SQL Server stand-alone installation or add features to an existing
+      installation</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_64.jpg" /></p>
+<ol>
+  <li>Click <strong>OK</strong> in the <strong>Setup Support Rules</strong> dialog box.</li>
+</ol>
+<p><img src="./html_doc_images/img_65.jpg" /></p>
+<ol>
+  <li>Enter the <strong>Product Key</strong> and click <strong>Next</strong> in the <strong>Product Key</strong> dialog
+    box.</li>
+</ol>
+<p><img src="./html_doc_images/img_66.jpg" /></p>
+<ol>
+  <li>Choose <strong>I accept the license terms</strong> and click <strong>Next </strong>in the<strong> License Terms
+    </strong>dialog box.</li>
+</ol>
+<p><img src="./html_doc_images/img_67.jpg" /></p>
+<ol>
+  <li>Click <strong>Install </strong>in the<strong> Setup Support Files </strong>dialog box.</li>
+</ol>
+<p><img src="./html_doc_images/img_68.jpg" /></p>
+<ol>
+  <li>Click <strong>Next </strong>in the<strong> Setup Support Roles </strong>dialog box<strong>.</strong></li>
+</ol>
+<p><img src="./html_doc_images/img_69.jpg" /></p>
+<ol>
+  <li>Click <strong>Select All</strong> button, and click <strong>next </strong>in the <strong>Feature Selection
+    </strong>dialog box.</li>
+</ol>
+<p><img src="./html_doc_images/img_70.jpg" /></p>
+<ol>
+  <li>Click <strong>Next</strong> in the <strong>Instance Configuration</strong> dialog box.</li>
+</ol>
+<p><img src="./html_doc_images/img_71.jpg" /></p>
+<ol>
+  <li>Click <strong>Next</strong> in the <strong>Disk Space Requirements</strong> dialog box.</li>
+</ol>
+<p><img src="./html_doc_images/img_72.jpg" /></p>
+<ol>
+  <li>Type <strong>Account Name</strong> and <strong>Password</strong> and click Next.</li>
+</ol>
+<p><img src="./html_doc_images/img_73.jpg" alt="10.jpg" /></p>
+<ol>
+  <li>Select Mixed Mode (SQL Server authentication and Windows authentication), type password. Click Add Current User
+    and click Next.</li>
+</ol>
+<p><img src="./html_doc_images/img_74.jpg" alt="11.jpg" /></p>
+<ol>
+  <li>Click Add Current User and click Next.</li>
+</ol>
+<p><img src="./html_doc_images/img_75.jpg" alt="12.jpg" /></p>
+<ol>
+  <li>Click <strong>Next</strong> in the <strong>Reporting Services Configuration</strong> dialog box.</li>
+</ol>
+<p><img src="./html_doc_images/img_76.jpg" /></p>
+<ol>
+  <li>Click <strong>Next</strong> in the <strong>Error and Usage Reporting</strong> dialog box.</li>
+</ol>
+<p><img src="./html_doc_images/img_77.jpg" /></p>
+<ol>
+  <li>Click <strong>Next</strong> in the <strong>Installation Rules</strong> dialog box.</li>
+</ol>
+<p><img src="./html_doc_images/img_78.jpg" /></p>
+<ol>
+  <li>Click <strong>Install</strong> in the <strong>Ready to Install</strong> dialog box.</li>
+</ol>
+<p><img src="./html_doc_images/img_79.jpg" /></p>
+<ol>
+  <li>Click <strong>Next</strong> in the <strong>Installation Progress</strong> dialog box.</li>
+</ol>
+<p><img src="./html_doc_images/img_80.jpg" /></p>
+<ol>
+  <li>Click <strong>Close</strong> in the <strong>Complete</strong> dialog box.</li>
+</ol>
+<p><img src="./html_doc_images/img_81.jpg" /></p>
+<h3><a id="_Toc281571837"></a>How to install Microsoft SQL Server 2008 Enterprise sp1</h3>
+<ol>
+  <li>Click <strong>Setup</strong> to install SQL Server 2008 Service Pack1</li>
+</ol>
+<p><img src="./html_doc_images/img_82.jpg" /></p>
+<ol>
+  <li>Select <strong>I accept the license terms</strong> and click <strong>Next</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_83.jpg" /></p>
+<ol>
+  <li><strong>Select All</strong> and click <strong>Next</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_84.jpg" /></p>
+<ol>
+  <li>Click <strong>Next </strong>in<strong> </strong>the<strong> Check Files In Use </strong>page.</li>
+</ol>
+<p><img src="./html_doc_images/img_85.jpg" /></p>
+<ol>
+  <li>Click <strong>Update</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_86.jpg" /></p>
+<ol>
+  <li>Click Next.</li>
+</ol>
+<p><img src="./html_doc_images/img_87.jpg" /></p>
+<ol>
+  <li>Click <strong>Close</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_88.jpg" /></p>
+<h3><a id="_Toc281571838"></a>How to Install the Update for SQL Server 2008 Enterprise</h3>
+<ol>
+  <li>Click <strong>setup</strong> to install the update for SQL Server 2008.</li>
+</ol>
+<p><img src="./html_doc_images/img_89.jpg" /></p>
+<ol>
+  <li>Select <strong>I accept the license terms</strong> and click <strong>Next</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_90.jpg" /></p>
+<ol>
+  <li><strong>Select All</strong> and click <strong>Next</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_91.jpg" /></p>
+<ol>
+  <li>Click <strong>Next</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_92.jpg" /></p>
+<ol>
+  <li>Click <strong>Update</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_93.jpg" /></p>
+<ol>
+  <li>Click Next.</li>
+</ol>
+<p><img src="./html_doc_images/img_94.jpg" /></p>
+<ol>
+  <li>Click <strong>Close</strong></li>
+</ol>
+<p><img src="./html_doc_images/img_95.jpg" /></p>
+<h2><a id="_How_to_install_14"></a><a id="_Toc468453838"></a>How to install Microsoft SQL 2008 Enterprise R2</h2>
+<h3>Install Web Server (IIS7.0) role</h3>
+<ol>
+  <li>Click <strong>Start</strong>-&gt;<strong>Administrative Tools</strong>-&gt;<strong>Server
+      Manager</strong>-&gt;<strong>Roles</strong>-&gt;<strong>Add Roles</strong>, select <strong>Web Server (IIS)
+    </strong>in <strong>Select Server Roles </strong>dialog box, Click <strong>Next</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_96.jpg" /></p>
+<ol>
+  <li>Click <strong>Next</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_97.jpg" /></p>
+<ol>
+  <li>Select <strong>Web Server (IIS)</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_98.jpg" /></p>
+<ol>
+  <li>Click <strong>Next </strong>in <strong>Web Server (IIS)</strong> dialog box.</li>
+</ol>
+<p><img src="./html_doc_images/img_99.jpg" /></p>
+<ol>
+  <li>Select <strong>all components </strong>in <strong>Select</strong> <strong>Role Services </strong>dialog box, click
+    <strong>Next.</strong><img src="./html_doc_images/img_100.jpg" /></li>
+  <li>Click <strong>Install.</strong></li>
+</ol>
+<p><img src="./html_doc_images/img_101.jpg" /></p>
+<ol>
+  <li>Click <strong>Close </strong>to finish installation.<img src="./html_doc_images/img_102.jpg" /></li>
+</ol>
+<h3>Install .NET Framework 3.5.1 </h3>
+<ol>
+  <li>Go to <strong>Start</strong>-&gt;<strong>All Programs</strong>-&gt;<strong>Administrative
+      Tools</strong>-&gt;<strong>Server Manager</strong>-&gt;<strong>Features</strong>-&gt;<strong>Add
+      Features</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_103.jpg" /></p>
+<ol>
+  <li>Select <strong>.NET Framework 3.5.1</strong> <strong>Features</strong> dialog box.</li>
+</ol>
+<p><img src="./html_doc_images/img_104.jpg" /></p>
+<ol>
+  <li>Click <strong>Add Required Roles Services </strong>in pop-up window.</li>
+</ol>
+<p><img src="./html_doc_images/img_105.jpg" /></p>
+<ol>
+  <li>Click <strong>Next </strong>in <strong>Add Features Wizard</strong> dialog box.</li>
+</ol>
+<p><img src="./html_doc_images/img_106.jpg" /></p>
+<ol>
+  <li>Click <strong>Next</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_107.jpg" /></p>
+<ol>
+  <li>Click <strong>Next.</strong></li>
+</ol>
+<p><img src="./html_doc_images/img_108.jpg" /></p>
+<ol>
+  <li>Click <strong>Install.</strong></li>
+</ol>
+<p><img src="./html_doc_images/img_109.jpg" /></p>
+<ol>
+  <li>Click <strong>Close </strong>to finish installation.</li>
+</ol>
+<p><img src="./html_doc_images/img_110.jpg" /></p>
+<h3><a id="_Toc279169097"></a>Install Microsoft SQL Server 2008 R2</h3>
+<ol>
+  <li>Double click <strong>setup.exe </strong>to start installation.</li>
+  <li>Click the <strong>Installation</strong> in the left panel, and then click <strong>New installation or add features
+      to an existing installation</strong> in the right panel.</li>
+</ol>
+<p><img src="./html_doc_images/img_111.jpg" /></p>
+<ol>
+  <li>Click <strong>OK</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_112.jpg" /></p>
+<ol>
+  <li>Click <strong>Install</strong> to install the Setup Support Files.</li>
+</ol>
+<p><img src="./html_doc_images/img_113.jpg" /></p>
+<ol>
+  <li>Check if there is rule failed. If yes, repro the sections before; if not, click <strong>Next</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_114.jpg" /></p>
+<ol>
+  <li>Select <strong>Specify a free edition</strong> and click <strong>Next</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_115.jpg" /></p>
+<ol>
+  <li>Check the license terms and select <strong>I accept the license terms</strong> and click <strong>Next</strong>.
+  </li>
+</ol>
+<p><img src="./html_doc_images/img_116.jpg" /></p>
+<ol>
+  <li>Select <strong>SQL Server Feature Installation</strong>, and click <strong>Next</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_117.jpg" /></p>
+<ol>
+  <li>Click <strong>Select All</strong> and click <strong>Next</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_118.jpg" /></p>
+<ol>
+  <li>Click <strong>Next.</strong></li>
+</ol>
+<p><img src="./html_doc_images/img_119.jpg" /></p>
+<ol>
+  <li>Click <strong>Next </strong>for the <strong>Instance Configuration</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_120.jpg" /></p>
+<ol>
+  <li>Click <strong>Next</strong> for the <strong>Desk Space Requirements</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_121.jpg" /></p>
+<ol>
+  <li>For <strong>workgroup</strong> environment type <strong>administrator</strong> as account name and
+    <strong>Password01!</strong> as password and click <strong>Next</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_122.jpg" /></p>
+<p>For <strong>domain</strong> environment type <strong>contoso\administrator</strong> as account name and
+  <strong>Password01!</strong> as password and click <strong>Next</strong>.</p>
+<p><img src="./html_doc_images/img_123.jpg" /></p>
+<ol>
+  <li>Select <strong>Mixed Mode (SQL Server authentication and windows authentication)</strong>, type in
+    <strong>Password01!</strong> in <strong>Enter password</strong> and <strong>Confirm password</strong>, click
+    <strong>Add Current User</strong> and then click <strong>Next</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_124.jpg" /></p>
+<ol>
+  <li>Click <strong>Add Current User</strong> and click <strong>Next</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_125.jpg" /></p>
+<ol>
+  <li>Select <strong>Install the native mode default configuration</strong> or <strong>Install the SharePoint integrated
+      mode default configuration</strong> according to the test environment in <strong>Reporting Services
+      Configuration</strong> page and click <strong>Next</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_126.jpg" /></p>
+<ol>
+  <li>Click <strong>Next</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_127.jpg" /></p>
+<ol>
+  <li>Click <strong>Next</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_128.jpg" /></p>
+<ol>
+  <li>Click <strong>Install</strong> to finish the installation.</li>
+</ol>
+<p><img src="./html_doc_images/img_129.jpg" /></p>
+<h2><a id="_How_to_install_15"></a><a id="_Toc468453839"></a>How to install SQL Server Denali CTP3</h2>
+<h3>Install Web Server (IIS7.0) role</h3>
+<ol>
+  <li>Click <strong>Start</strong>-&gt;<strong>Administrative Tools</strong>-&gt;<strong>Server
+      Manager</strong>-&gt;<strong>Roles</strong>-&gt;<strong>Add Roles</strong>, select <strong>Web Server (IIS)
+    </strong>in <strong>Select Server Roles </strong>dialog box, Click <strong>Next</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_130.jpg" /></p>
+<ol>
+  <li>Click <strong>Next</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_131.jpg" /></p>
+<ol>
+  <li>Select <strong>Web Server (IIS)</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_132.jpg" /></p>
+<ol>
+  <li>Click <strong>Next </strong>in <strong>Web Server (IIS)</strong> dialog box.</li>
+</ol>
+<p><img src="./html_doc_images/img_133.jpg" /></p>
+<ol>
+  <li>Select <strong>all components </strong>in <strong>Select</strong> <strong>Role Services </strong>dialog box, click
+    <strong>Next.</strong><img src="./html_doc_images/img_134.jpg" /></li>
+  <li>Click <strong>Install.</strong></li>
+</ol>
+<p><img src="./html_doc_images/img_135.jpg" /></p>
+<ol>
+  <li>Click <strong>Close </strong>to finish installation.<img src="./html_doc_images/img_136.jpg" /></li>
+</ol>
+<h3>Install .NET Framework 3.5.1 </h3>
+<ol>
+  <li>Go to <strong>Start</strong>-&gt;<strong>All Programs</strong>-&gt;<strong>Administrative
+      Tools</strong>-&gt;<strong>Server Manager</strong>-&gt;<strong>Features</strong>-&gt;<strong>Add
+      Features</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_137.jpg" /></p>
+<ol>
+  <li>Select <strong>.NET Framework 3.5.1</strong> <strong>Features</strong> dialog box.</li>
+</ol>
+<p><img src="./html_doc_images/img_138.jpg" /></p>
+<ol>
+  <li>Click <strong>Add Required Roles Services </strong>in pop-up window.</li>
+</ol>
+<p><img src="./html_doc_images/img_139.jpg" /></p>
+<ol>
+  <li>Click <strong>Next </strong>in <strong>Add Features Wizard</strong> dialog box.</li>
+</ol>
+<p><img src="./html_doc_images/img_140.jpg" /></p>
+<ol>
+  <li>Click <strong>Next</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_141.jpg" /></p>
+<ol>
+  <li>Click <strong>Next.</strong></li>
+</ol>
+<p><img src="./html_doc_images/img_142.jpg" /></p>
+<ol>
+  <li>Click <strong>Install.</strong></li>
+</ol>
+<p><img src="./html_doc_images/img_143.jpg" /></p>
+<ol>
+  <li>Click <strong>Close </strong>to finish installation.</li>
+</ol>
+<p><img src="./html_doc_images/img_144.jpg" /></p>
+<h3>Install SQL Server Denali CTP3</h3>
+<ol>
+  <li>Double click <strong>setup.exe </strong>to start installation.</li>
+  <li>Click <strong>Installation-&gt; New SQL Server stand-alone installation or add features to an existing
+      installation</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_145.jpg" /></p>
+<ol>
+  <li>Click <strong>OK</strong> in the <strong>Setup Support Rules</strong> dialog box.</li>
+</ol>
+<p><img src="./html_doc_images/img_146.jpg" /></p>
+<ol>
+  <li>Click <strong>Next</strong> in the <strong>Product Key</strong> dialog box.</li>
+</ol>
+<p><img src="./html_doc_images/img_147.jpg" /></p>
+<ol>
+  <li>Choose <strong>I accept the license terms</strong> and click <strong>Next </strong>in the<strong> License Terms
+    </strong>dialog box.</li>
+</ol>
+<p><img src="./html_doc_images/img_148.jpg" /></p>
+<ol>
+  <li>Click <strong>Next </strong>in the<strong> Product Updates </strong>dialog box.</li>
+</ol>
+<p><img src="./html_doc_images/img_149.jpg" /></p>
+<ol>
+  <li>Wait some minute when <strong>SQL Server Setup files are being installed on the system.</strong></li>
+</ol>
+<p><img src="./html_doc_images/img_150.jpg" /></p>
+<ol>
+  <li>Click <strong>Next </strong>in the<strong> Setup Support Rules </strong>dialog box<strong>.</strong></li>
+</ol>
+<p><img src="./html_doc_images/img_151.jpg" /></p>
+<ol>
+  <li>Click <strong>Next </strong>in the<strong> Setup Role </strong>dialog box<strong>.</strong></li>
+</ol>
+<p><img src="./html_doc_images/img_152.jpg" /></p>
+<ol>
+  <li>Click <strong>Select All</strong> button, and click <strong>next </strong>in the <strong>Feature Selection
+    </strong>dialog box. Also you can only select the features which you want to install.</li>
+</ol>
+<p><img src="./html_doc_images/img_153.jpg" /></p>
+<ol>
+  <li>Click <strong>Next</strong> in the <strong>Installation Rules</strong> dialog box.</li>
+</ol>
+<p><img src="./html_doc_images/img_154.jpg" /></p>
+<ol>
+  <li>Click <strong>Next</strong> in the <strong>Instance Configuration</strong> dialog box.</li>
+</ol>
+<p><img src="./html_doc_images/img_155.jpg" /></p>
+<ol>
+  <li>Click <strong>Next</strong> in the <strong>Disk Space Requirements</strong> dialog box.</li>
+</ol>
+<p><img src="./html_doc_images/img_156.jpg" /></p>
+<ol>
+  <li>For <strong>workgroup</strong> environment type <strong>administrator</strong> as account name and its password
+    then click <strong>Next</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_157.jpg" /></p>
+<p>For <strong>domain</strong> environment type <strong>contoso\administrator</strong> as account name its password and
+  click <strong>Next</strong>.</p>
+<p><img src="./html_doc_images/img_158.jpg" /></p>
+<ol>
+  <li>Select <strong>Mixed Mode (SQL Server authentication and windows authentication)</strong>, type in password in
+    <strong>Enter password</strong> and <strong>Confirm password</strong>, click <strong>Add Current User</strong> and
+    then click <strong>Next </strong>in the <strong>Database Engine Configuration </strong>dialog box</li>
+</ol>
+<p><img src="./html_doc_images/img_159.jpg" /></p>
+<ol>
+  <li>Click <strong>Add Current User</strong>, and click <strong>Nex</strong>t in the <strong>Analysis Services
+      Configuration</strong> dialog box.</li>
+</ol>
+<p><img src="./html_doc_images/img_160.jpg" /></p>
+<ol>
+  <li>Click <strong>Next</strong> in the <strong>Reporting Services Configuration</strong> dialog box.</li>
+</ol>
+<p><img src="./html_doc_images/img_161.jpg" /></p>
+<ol>
+  <li>Click <strong>Add Current User</strong>, and click <strong>Nex</strong>t in the <strong>Distributed Replay
+      Controller</strong> dialog box.</li>
+</ol>
+<p><img src="./html_doc_images/img_162.jpg" /></p>
+<ol>
+  <li>Type a Controller Name and click <strong>Nex</strong>t in the <strong>Distributed Replay Client</strong> dialog
+    box.</li>
+</ol>
+<p><img src="./html_doc_images/img_163.jpg" /></p>
+<ol>
+  <li>Click <strong>Next</strong> in the <strong>Error Reporting</strong> dialog box.</li>
+</ol>
+<p><img src="./html_doc_images/img_164.jpg" /></p>
+<ol>
+  <li>Click <strong>Next</strong> in the <strong>Installation Configuration Rules</strong> dialog box.</li>
+</ol>
+<p><img src="./html_doc_images/img_165.jpg" /></p>
+<ol>
+  <li>Click <strong>Install</strong> in the <strong>Ready to Install</strong> dialog box.</li>
+</ol>
+<p><img src="./html_doc_images/img_166.jpg" /></p>
+<ol>
+  <li>Click <strong>Close</strong> in the <strong>Complete</strong> dialog box.</li>
+</ol>
+<p><img src="./html_doc_images/img_167.jpg" /></p>
+<h2><a id="_Toc468453840"></a>How to install Microsoft SQL Server 2012 RC0</h2>
+<h3>Install Web Server (IIS7.0) role</h3>
+<ol>
+  <li>Click <strong>Start</strong>-&gt;<strong>Administrative Tools</strong>-&gt;<strong>Server
+      Manager</strong>-&gt;<strong>Roles</strong>-&gt;<strong>Add Roles</strong>; select <strong>Web Server (IIS)
+    </strong>in <strong>Select Server Roles </strong>dialog box, Click <strong>Next</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_168.jpg" /></p>
+<ol>
+  <li>Click <strong>Next</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_169.jpg" /></p>
+<ol>
+  <li>Select <strong>Web Server (IIS)</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_170.jpg" /></p>
+<ol>
+  <li>Click <strong>Next </strong>in <strong>Web Server (IIS)</strong> dialog box.</li>
+</ol>
+<p><img src="./html_doc_images/img_171.jpg" /></p>
+<ol>
+  <li>Select <strong>all components </strong>in <strong>Select</strong> <strong>Role Services </strong>dialog box, click
+    <strong>Next.</strong><img src="./html_doc_images/img_172.jpg" /></li>
+  <li>Click <strong>Install.</strong></li>
+</ol>
+<p><img src="./html_doc_images/img_173.jpg" /></p>
+<ol>
+  <li>Click <strong>Close </strong>to finish installation.<img src="./html_doc_images/img_174.jpg" /></li>
+</ol>
+<h3>Install .NET Framework 3.5.1 </h3>
+<ol>
+  <li>Go to <strong>Start</strong>-&gt;<strong>All Programs</strong>-&gt;<strong>Administrative
+      Tools</strong>-&gt;<strong>Server Manager</strong>-&gt;<strong>Features</strong>-&gt;<strong>Add
+      Features</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_175.jpg" /></p>
+<ol>
+  <li>Select <strong>.NET Framework 3.5.1</strong> <strong>Features</strong> dialog box.</li>
+</ol>
+<p><img src="./html_doc_images/img_176.jpg" /></p>
+<ol>
+  <li>Click <strong>Add Required Roles Services </strong>in pop-up window.</li>
+</ol>
+<p><img src="./html_doc_images/img_177.jpg" /></p>
+<ol>
+  <li>Click <strong>Next </strong>in <strong>Add Features Wizard</strong> dialog box.</li>
+</ol>
+<p><img src="./html_doc_images/img_178.jpg" /></p>
+<ol>
+  <li>Click <strong>Next</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_179.jpg" /></p>
+<ol>
+  <li>Click <strong>Next.</strong></li>
+</ol>
+<p><img src="./html_doc_images/img_180.jpg" /></p>
+<ol>
+  <li>Click <strong>Install.</strong></li>
+</ol>
+<p><img src="./html_doc_images/img_181.jpg" /></p>
+<ol>
+  <li>Click <strong>Close </strong>to finish installation.</li>
+</ol>
+<p><img src="./html_doc_images/img_182.jpg" /></p>
+<h3>Install Microsoft SQL Server 2012 RC0</h3>
+<ol>
+  <li>Double click <strong>setup.exe </strong>to start installation.</li>
+  <li>Click <strong>Installation-&gt; New SQL Server stand-alone installation or add features to an existing
+      installation</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_183.jpg" /></p>
+<ol>
+  <li>Click <strong>OK</strong> in the <strong>Setup Support Rules</strong> dialog box.</li>
+</ol>
+<p><img src="./html_doc_images/img_184.jpg" /></p>
+<ol>
+  <li>Unselect <strong>Include SQL Server Product updates</strong> and click <strong>Next </strong>in the<strong>
+      Product Updates </strong>dialog box.</li>
+</ol>
+<p><img src="./html_doc_images/img_185.jpg" /></p>
+<ol>
+  <li>Wait some minute when <strong>SQL Server Setup files are being installed on the system.</strong></li>
+</ol>
+<p><img src="./html_doc_images/img_186.jpg" /></p>
+<ol>
+  <li>Click <strong>Next </strong>in the<strong> Setup Support Rules </strong>dialog box.</li>
+</ol>
+<p><img src="./html_doc_images/img_187.jpg" /></p>
+<ol>
+  <li>Select <strong>Specify a free edition</strong> and click <strong>Next</strong> in the <strong>Product Key</strong>
+    dialog box.</li>
+</ol>
+<p><img src="./html_doc_images/img_188.jpg" /></p>
+<ol>
+  <li>Choose <strong>I accept the license terms</strong> and click <strong>Next </strong>in the<strong> License Terms
+    </strong>dialog box.</li>
+</ol>
+<p><img src="./html_doc_images/img_189.jpg" /></p>
+<ol>
+  <li>Choose <strong>SQL Server Feature Installation</strong> as default, click <strong>Next </strong>in the<strong>
+      Setup Role </strong>dialog box<strong>.</strong></li>
+</ol>
+<p><img src="./html_doc_images/img_190.jpg" /></p>
+<ol>
+  <li>Click <strong>Select All</strong> button, and click <strong>next </strong>in the <strong>Feature Selection
+    </strong>dialog box. Also you can only select the features which you want to install.</li>
+</ol>
+<p><img src="./html_doc_images/img_191.jpg" /></p>
+<ol>
+  <li>Click <strong>Next</strong> in the <strong>Installation Rules</strong> dialog box.</li>
+</ol>
+<p><img src="./html_doc_images/img_192.jpg" /></p>
+<ol>
+  <li>Click <strong>Next</strong> in the <strong>Instance Configuration</strong> dialog box.</li>
+</ol>
+<p><img src="./html_doc_images/img_193.jpg" /></p>
+<ol>
+  <li>Click <strong>Next</strong> in the <strong>Disk Space Requirements</strong> dialog box.</li>
+</ol>
+<p><img src="./html_doc_images/img_194.jpg" /></p>
+<ol>
+  <li>For <strong>workgroup</strong> environment type <strong>administrator</strong> as account name and its password
+    then click <strong>Next</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_195.jpg" /></p>
+<p>For <strong>domain</strong> environment type <strong>contoso\administrator</strong> as account name its password and
+  click <strong>Next</strong>.</p>
+<p><img src="./html_doc_images/img_196.jpg" /></p>
+<ol>
+  <li>Select <strong>Mixed Mode (SQL Server authentication and windows authentication)</strong>, type in password in
+    <strong>Enter password</strong> and <strong>Confirm password</strong>, click <strong>Add Current User</strong> and
+    then click <strong>Next </strong>in the <strong>Database Engine Configuration </strong>dialog box.</li>
+</ol>
+<p><img src="./html_doc_images/img_197.jpg" /></p>
+<ol>
+  <li>Click <strong>Add Current User</strong>, and click <strong>Nex</strong>t in the <strong>Analysis Services
+      Configuration</strong> dialog box.</li>
+</ol>
+<p><img src="./html_doc_images/img_198.jpg" /></p>
+<ol>
+  <li>Click <strong>Next</strong> in the <strong>Reporting Services Configuration</strong> dialog box.</li>
+</ol>
+<p><img src="./html_doc_images/img_199.jpg" /></p>
+<ol>
+  <li>Click <strong>Add Current User</strong>, and click <strong>Nex</strong>t in the <strong>Distributed Replay
+      Controller</strong> dialog box.</li>
+</ol>
+<p><img src="./html_doc_images/img_200.jpg" /></p>
+<ol>
+  <li>Type a Controller Name and click <strong>Nex</strong>t in the <strong>Distributed Replay Client</strong> dialog
+    box.</li>
+</ol>
+<p><img src="./html_doc_images/img_201.jpg" /></p>
+<ol>
+  <li>Click <strong>Next</strong> in the <strong>Error Reporting</strong> dialog box.</li>
+</ol>
+<p><img src="./html_doc_images/img_202.jpg" /></p>
+<ol>
+  <li>Click <strong>Next</strong> in the <strong>Installation Configuration Rules</strong> dialog box.</li>
+</ol>
+<p><img src="./html_doc_images/img_203.jpg" /></p>
+<ol>
+  <li>Click <strong>Install</strong> in the <strong>Ready to Install</strong> dialog box.</li>
+</ol>
+<p><img src="./html_doc_images/img_204.jpg" /></p>
+<ol>
+  <li>Click <strong>Close</strong> in the <strong>Complete</strong> dialog box.</li>
+</ol>
+<p><img src="./html_doc_images/img_205.jpg" /></p>
+<ol>
+  <li>Click <strong>OK</strong> and restart the computer to complete the installation. </li>
+</ol>
+<p><img src="./html_doc_images/img_206.jpg" /></p>
+<h2><a id="_Toc468453841"></a>How to install Microsoft SQL Server 2016 RC3</h2>
+<h3>Install .NET Framework4.6.1</h3>
+<ol>
+  <li>Double click <strong>NDP461-DevPack-KB3105179-ENU.exe</strong>, select the check box, Click
+    <strong>Install.</strong> <img src="./html_doc_images/img_207.jpg" /></li>
+  <li>Click <strong>Restart </strong>after<strong> </strong>setup successfully. <img
+      src="./html_doc_images/img_208.jpg" /></li>
+</ol>
+<h3>Install Microsoft SQL Server 2016 RC3 </h3>
+<h4>Preinstall for Microsoft SQL Server 2016 RC3</h4>
+<ol>
+  <li>Preinstall <a
+      href="D:\\Git Source\\MS-SSAS-T\\Docs\\Internal\\httpssupport.microsoft.comen-uskb3138367">KB316398</a>. Double
+    click <strong>vcredist_x64.exe</strong>, select the check box and click <strong>install</strong>.<img
+      src="./html_doc_images/img_209.jpg" /></li>
+  <li>Click <strong>Close</strong>. </li>
+</ol>
+<p><img src="./html_doc_images/img_210.jpg" /></p>
+<h4>Install Microsoft SQL Server 2016 RC3</h4>
+<ol>
+  <li>Double click <strong>setup.exe </strong>to start installation.</li>
+  <li>Click <strong>Installation-&gt; New SQL Server stand-alone installation or add features to an existing
+      installation</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_211.jpg" /></p>
+<ol>
+  <li>Click <strong>Next</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_212.jpg" /></p>
+<ol>
+  <li>Wait a few minutes and make sure all rules check passed, Click <strong>Next</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_213.jpg" /></p>
+<ol>
+  <li>Select <strong>Evaluation </strong>edition, apply your product key at <a
+      href="https://mskeys.microsoft.com/">MsKeys</a> , then enter your key. Click <strong>Next</strong>.<img
+      src="./html_doc_images/img_214.jpg" /> </li>
+  <li>Select the check, click <strong>Next</strong>.<img src="./html_doc_images/img_215.jpg" /> </li>
+  <li>Click <strong>Select All</strong>, except for <strong>PolyBase Query Service for External Data</strong>. Click
+    <strong>Next</strong>.<img src="./html_doc_images/img_216.jpg" /></li>
+  <li>Keep default value, click <strong>Next</strong>.<img src="./html_doc_images/img_217.jpg" /></li>
+  <li>Type the domain administrator user’s name and password (For example: <strong>contoso\administrator</strong>,
+    <strong>Password01!</strong>). Wait a few minutes and make sure all rules check passed, Click <strong>Next</strong>
+  </li>
+</ol>
+<p><img src="./html_doc_images/img_218.jpg" /></p>
+<ol>
+  <li>Select <strong>Mixed</strong> <strong>Mode</strong> type password for <strong>sa</strong> (For example:
+    <strong>Password01!</strong>), Click <strong>Next</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_219.jpg" /> </p>
+<ol>
+  <li>Select <strong>Multidimensional and data Mining Mode,</strong> click <strong>Add Current User</strong>, then click
+    <strong>Next</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_220.jpg" /></p>
+<ol>
+  <li>Click <strong>Next</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_221.jpg" /></p>
+<ol>
+  <li>Click <strong>Add Current User</strong>, then click Next. <img src="./html_doc_images/img_222.jpg" /></li>
+  <li>Type Controller Name (For example: <strong>Controller01</strong>), then click <strong>Next</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_223.jpg" /></p>
+<ol>
+  <li>Click <strong>Accept</strong> button, then click <strong>Next</strong>.<img src="./html_doc_images/img_224.jpg" />
+  </li>
+  <li>Click <strong>Install</strong>.<img src="./html_doc_images/img_225.jpg" /> </li>
+  <li>Wait until install complete and succeeded. Click <strong>Close</strong>.<img
+      src="./html_doc_images/img_226.jpg" /></li>
+</ol>
+<h4>Install SQL Server Management Studio</h4>
+<ol>
+  <li>Click <strong>Install SQL Server Management Tools</strong> on SQL Server Installation Center. Download
+    <strong>SSMS-Setup-ENU.exe</strong>.<img src="./html_doc_images/img_227.jpg" /></li>
+  <li>Double click <strong>SSMS-Setup-ENU.exe</strong> to start installation, click <strong>Install</strong>.<img
+      src="./html_doc_images/img_228.jpg" /></li>
+  <li>Click <strong>Close</strong></li>
+</ol>
+<p><img src="./html_doc_images/img_229.jpg" /></p>
+<h2>How to install Microsoft SQL Server 2017 Standard RTM Retail</h2>
+<h3>Install .NET Framework4.6.1</h3>
+<ol>
+  <li>Double click <strong>NDP461-DevPack-KB3105179-ENU.exe</strong>, select the check box, Click
+    <strong>Install.</strong> <img src="./html_doc_images/img_230.jpg" /></li>
+  <li>Click <strong>Restart </strong>after<strong> </strong>setup successfully. <img
+      src="./html_doc_images/img_231.jpg" /></li>
+</ol>
+<h3>Install Microsoft SQL Server 2017 Standard RTM Retail </h3>
+<h4>Preinstall for Microsoft SQL Server 2017 Standard RTM Retail</h4>
+<ol>
+  <li>Preinstall <a
+      href="D:\\Git Source\\MS-SSAS-T\\Docs\\Internal\\httpssupport.microsoft.comen-uskb3138367">KB316398</a>. Double
+    click <strong>vcredist_x64.exe</strong>, select the check box and click <strong>install</strong>.<img
+      src="./html_doc_images/img_232.jpg" /></li>
+  <li>Click <strong>Close</strong>. </li>
+</ol>
+<p><img src="./html_doc_images/img_233.jpg" /></p>
+<h4>Install Microsoft SQL Server 2017 Standard RTM Retail</h4>
+<ol>
+  <li>Double click <strong>setup.exe </strong>to start installation.</li>
+  <li>Click <strong>Installation-&gt; New SQL Server stand-alone installation or add features to an existing
+      installation</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_234.jpg" /></p>
+<ol>
+  <li>Click <strong>Next</strong>. </li>
+  <li>Select <strong>Evaluation </strong>edition, apply your product key at <a
+      href="https://mskeys.microsoft.com/">MsKeys</a> , then enter your key. Click <strong>Next</strong>. <img
+      src="./html_doc_images/img_235.jpg" /> </li>
+  <li>Select the check, click <strong>Next</strong>. <img src="./html_doc_images/img_236.jpg" /> </li>
+  <li>Select the check, click <strong>Next</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_237.jpg" /></p>
+<ol>
+  <li>Wait a few minutes and make sure all rules check passed, Click <strong>Next</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_238.jpg" /></p>
+<ol>
+  <li>Click <strong>Select All</strong>, except for <strong>PolyBase Query Service for External Data</strong>. Click
+    <strong>Next</strong>. <img src="./html_doc_images/img_239.jpg" /></li>
+  <li>Keep default value, click <strong>Next</strong>. <img src="./html_doc_images/img_240.jpg" /></li>
+  <li>Type the domain administrator user’s name and password (For example: <strong>contoso\administrator</strong>,
+    <strong>Password01!</strong>). Wait a few minutes and make sure all rules check passed, Click <strong>Next</strong>
+  </li>
+</ol>
+<p><img src="./html_doc_images/img_241.jpg" /></p>
+<ol>
+  <li>Select <strong>Mixed</strong> <strong>Mode</strong> type password for <strong>sa</strong> (For example:
+    <strong>Password01!</strong>), Click <strong>Next</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_242.jpg" /> </p>
+<ol>
+  <li>Select <strong>Multidimensional and data Mining Mode,</strong> click <strong>Add Current User</strong>, then click
+    <strong>Next</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_243.jpg" /></p>
+<ol>
+  <li>Click <strong>Next</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_244.jpg" /></p>
+<ol>
+  <li>Click <strong>Add Current User</strong>, then click Next. <img src="./html_doc_images/img_245.jpg" /></li>
+  <li>Type Controller Name (For example: <strong>Controller01</strong>), then click <strong>Next</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_246.jpg" /></p>
+<ol>
+  <li>Click <strong>Accept</strong> button, then click <strong>Next</strong>. <img
+      src="./html_doc_images/img_247.jpg" /> </li>
+  <li>Click <strong>Accept</strong> button, then click <strong>Next</strong>. </li>
+</ol>
+<p><img src="./html_doc_images/img_248.jpg" /></p>
+<ol>
+  <li>Click <strong>Install</strong>. <img src="./html_doc_images/img_249.jpg" /> </li>
+  <li>Wait until install complete and succeeded. Click <strong>Close</strong>. <img
+      src="./html_doc_images/img_250.jpg" /></li>
+</ol>
+<h4>Install SQL Server Management Studio</h4>
+<ol>
+  <li>Click <strong>Install SQL Server Management Tools</strong> on SQL Server Installation Center. Download
+    <strong>SSMS-Setup-ENU.exe</strong>. <img src="./html_doc_images/img_251.jpg" /></li>
+  <li>Double click <strong>SSMS-Setup-ENU.exe</strong> to start installation, click <strong>Install</strong>. <img
+      src="./html_doc_images/img_252.jpg" /></li>
+  <li>Click <strong>Close</strong></li>
+</ol>
+<p><img src="./html_doc_images/img_253.jpg" /></p>
+<h2>How to install Microsoft SQL Server 2019 GA</h2>
+<h3>Install Microsoft SQL Server 2019 GA</h3>
+<ol>
+  <li>Double click setup.exe to start installation.</li>
+  <li>Click <strong>Installation </strong>-&gt; <strong>New SQL Server stand-alone installation or add features to an
+      existing installation</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_254.jpg" /></p>
+<ol>
+  <li>Select Evaluation edition, or apply your product key at <a href="https://mskeys.microsoft.com/">MsKeys</a>, then
+    enter your key. Click <strong>Next</strong>.</li>
+</ol><img src="./html_doc_images/img_255.jpg" />
+<ol>
+  <li>Select the check, click <strong>Next</strong>.</li>
+</ol><img src="./html_doc_images/img_256.jpg" />
+<ol>
+  <li>Wait a few minutes and make sure all rules check passed, Click <strong>Next</strong>.</li>
+</ol><img src="./html_doc_images/img_257.jpg" />
+<ol>
+  <li>Click <strong>Select All</strong>, except for <strong>PolyBase Query Service for External Data</strong>. Click
+    <strong>Next</strong>.</li>
+</ol><img src="./html_doc_images/img_258.jpg" />
+<ol>
+  <li>Keep default value, click <strong>Next</strong>.</li>
+</ol><img src="./html_doc_images/img_259.jpg" />
+<ol>
+  <li>Type the domain administrator user’s name and password (For example: <strong>contoso\administrator</strong>,
+    <strong>Password01!</strong>). Wait a few minutes and make sure all rules check passed, Click <strong>Next</strong>.
+  </li>
+</ol><img src="./html_doc_images/img_260.jpg" />
+<ol>
+  <li>Select <strong>Mixed</strong> <strong>Mode</strong> type password for <strong>sa</strong> (For example:
+    <strong>Password01!</strong>), Click <strong>Next</strong>.</li>
+</ol><img src="./html_doc_images/img_261.jpg" />
+<ol>
+  <li>Select <strong>Multidimensional and data Mining Mode,</strong> click <strong>Add Current User</strong>, then click
+    <strong>Next</strong>.</li>
+</ol><img src="./html_doc_images/img_262.jpg" />
+<ol>
+  <li>Click <strong>Next</strong>.</li>
+</ol><img src="./html_doc_images/img_263.jpg" />
+<ol>
+  <li>Click <strong>Next</strong>.</li>
+</ol><img src="./html_doc_images/img_264.jpg" />
+<ol>
+  <li>Click <strong>Add Current User</strong>, then click <strong>Next</strong>.</li>
+</ol><img src="./html_doc_images/img_265.jpg" />
+<ol>
+  <li>Type Controller Name (For example: <strong>Controller01</strong>), then click <strong>Next</strong>.</li>
+</ol><img src="./html_doc_images/img_266.jpg" />
+<ol>
+  <li>Click <strong>Accept</strong> button, then click <strong>Next</strong>.</li>
+</ol><img src="./html_doc_images/img_267.jpg" />
+<ol>
+  <li>Click <strong>Accept</strong> button, then click <strong>Next</strong>.</li>
+</ol><img src="./html_doc_images/img_268.jpg" />
+<ol>
+  <li>Click <strong>Install</strong>.</li>
+</ol><img src="./html_doc_images/img_269.jpg" />
+<h3>Install Microsoft SQL Server 2019 GA on Ubuntu 16.04</h3>
+<p>Please refer to the following link to complete the installation:</p>
+<p><a
+    href="https://docs.microsoft.com/zh-cn/sql/linux/quickstart-install-connect-ubuntu?view=sql-server-ver15">https://docs.microsoft.com/zh-cn/sql/linux/quickstart-install-connect-ubuntu?view=sql-server-ver15</a>
+</p>
+<h1><a id="_Toc468453842"></a>SQL Server Configuration</h1>
+<p>The section lists the common SQL Server Configuration for Protocol Test Suite. </p>
+<h2><a id="_Toc468453843"></a>Configure the MSSQLSERVER Properties</h2>
+<p>Below process uses the SQL Server 2012 RC0 as an example, the same steps apply to SQL Server 2008 SP1, SQL Server
+  2008 R2 SP1 and SQL Server Denali CTP3.</p>
+<ol>
+  <li>Click <strong>Start</strong> menu, click <strong>All Programs</strong>, expand <strong>Microsoft SQL Server 2012
+      RC0</strong>-&gt; <strong>Configuration Tools</strong>, and click <strong>SQL Server Configuration
+      Manager</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_270.jpg" /></p>
+<ol>
+  <li>Expand <strong>SQL Server Configuration Manager (Local)</strong> -&gt; <strong>SQL Server Network
+      Configuration</strong> -&gt; <strong>Protocols for MSSQLSERVER</strong>, double-click <strong>Named Pipes</strong>
+    in the right panel.<img src="./html_doc_images/img_271.jpg" /></li>
+  <li>Double-click <strong>Named Pipes</strong>, select <strong>Yes</strong> for Enable and click <strong>OK</strong>,
+    in the pop-up window click <strong>OK</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_272.jpg" /></p>
+<ol>
+  <li>Expand <strong>SQL Server Configuration Manager (Local)</strong> -&gt; <strong>SQL Native Client 11.0
+      Configuration (32bit)</strong> -&gt; <strong>Client Protocols</strong>, check if the <strong>Named Pipes</strong>
+    are <strong>Enabled</strong> in the right panel, if not, double-click <strong>Named Pipes</strong> and changed the
+    <strong>Enable</strong> to <strong>Yes</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_273.jpg" /></p>
+<ol>
+  <li>Expand <strong>SQL Server Configuration Manager (Local)</strong> -&gt; <strong>SQL Native Client 11.0
+      Configuration</strong> -&gt; <strong>Client Protocols</strong>, check if the <strong>Named Pipes</strong> are
+    <strong>Enabled</strong> in the right panel, if not, double-click <strong>Named Pipes</strong> and changed the
+    <strong>Enable</strong> to <strong>Yes</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_274.jpg" /></p>
+<ol>
+  <li>Click <strong>Start</strong> menu and type <strong>services.msc</strong> in <strong>Run</strong> and press
+    <strong>Enter</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_275.jpg" /></p>
+<ol>
+  <li>Find <strong>SQL Server (MSSQLSERVER)</strong>, and <strong>restart</strong> the service.</li>
+</ol>
+<p><img src="./html_doc_images/img_276.jpg" /></p>
+<h1><a id="_Toc468453844"></a>Protocol Test Suite Tools Installation</h1>
+<p>The section lists some tools installation methods which may be used for the protocol test suite.</p>
+<h2><a id="_Toc468453845"></a>How to install Visual Studio Team System 2008</h2>
+<ol>
+  <li>Double click <strong>setup.exe </strong>to start installation.</li>
+  <li>Click <strong>Install Visual Studio 2008</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_277.jpg" alt="C:\Users\v-ww\Desktop\4.13\vsts1.jpg" /></p>
+<ol>
+  <li>Click <strong>Next</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_278.jpg" alt="C:\Users\v-ww\Desktop\4.13\vsts2.jpg" /></p>
+<ol>
+  <li>Select <strong>I have read and accept the license terms</strong>, and click <strong>Next</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_279.jpg" /></p>
+<ol>
+  <li>Select <strong>Default</strong>, and click <strong>Next</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_280.jpg" alt="C:\Users\v-ww\Desktop\4.13\vsts4.jpg" /></p>
+<ol>
+  <li>Click <strong>Finish</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_281.jpg" alt="C:\Users\v-ww\Desktop\4.13\vsts5.jpg" /></p>
+<h2><a id="_Toc468453846"></a><a id="_Toc291609536"></a><a id="_Toc295725394"></a>How to Install Visual Studio </h2>
+<h3>How to Install Visual Studio 2010 Ultimate</h3>
+<ol>
+  <li>Double click <strong>setup.exe </strong>to start installation.</li>
+  <li>Click <strong>Install Microsoft Visual Studio 2010.<br /></strong><img src="./html_doc_images/img_282.jpg" /></li>
+  <li>Click <strong>Next</strong>.<br /><img src="./html_doc_images/img_283.jpg" /></li>
+  <li>Select <strong>I have read and accept the license terms</strong>, and click <strong>Next.</strong><img
+      src="./html_doc_images/img_284.jpg" /></li>
+  <li>Select <strong>Full</strong>, and click <strong>Install.</strong><img src="./html_doc_images/img_285.jpg" /></li>
+  <li>When the following figure is shown, click <strong>Restart Now </strong>to restart the computer.<img
+      src="./html_doc_images/img_286.jpg" /></li>
+  <li>After the computer is restarted, the installation will go on automatically.<img
+      src="./html_doc_images/img_287.jpg" /></li>
+  <li>When the following figure is shown, click <strong>Finish</strong>.<img src="./html_doc_images/img_288.jpg" /></li>
+</ol>
+<h3>How to Install Visual Studio 2015 Enterprise</h3>
+<ol>
+  <li>Select <strong>Custom</strong> to customize the features for the installation. Click <strong>Next</strong>.<img
+      src="./html_doc_images/img_289.jpg" /> </li>
+  <li>Click <strong>Select All</strong> to select all features. Click <strong>Next</strong>.<img
+      src="./html_doc_images/img_290.jpg" /> </li>
+  <li>Click <strong>Install </strong>to start the installation.</li>
+</ol>
+<p><img src="./html_doc_images/img_291.jpg" /></p>
+<ol>
+  <li>Click <strong>Finish</strong>.</li>
+</ol>
+<h3>How to Install Visual Studio 2017 Enterprise</h3>
+<ol>
+  <li>Download</li>
+</ol>
+<p><a id="_Hlk478396914"></a>Go to <a
+    href="https://www.visualstudio.com/downloads">https://www.visualstudio.com/downloads</a> and download the Visual
+  Studio product. Note, Visual Studio no longer has an ISO or language packs. All languages are built into the product.
+  To achieve similar functionality to an ISO, follow the step in 2b.</p>
+<ol>
+  <li>Install</li>
+</ol>
+<h1><a id="_Hlk478397233"></a>Run the installer from the download location, OR</h1>
+<h1>To do an offline layout install, follow the instructions at <a
+    href="https://docs.microsoft.com/en-us/visualstudio/install/create-an-offline-installation-of-visual-studio">https://docs.microsoft.com/en-us/visualstudio/install/create-an-offline-installation-of-visual-studio</a>
+</h1>
+<p>Once you’ve completed your install, you will receive upgrade notifications in Visual Studio and in the VS installer
+  as they become available, so there is no need to download and re-install. </p>
+<ol>
+  <li>Get a key</li>
+  <li>If you have installed Enterprise or Professional, you will need to activate it with a key or subscription
+    (Community does not require activation)</li>
+  <li>If you have a Visual Studio Subscription account (formerly MSDN Subscription) linked to your FTE account, you can
+    sign into Visual Studio using this and it will work in the place of a key.</li>
+  <li>If you haven’t linked your account, or aren’t a Microsoft FTE, go to <a
+      href="https://mskeys.microsoft.com/">https://mskeys.microsoft.com/</a> to acquire a key. Click “Order Keys” and
+    follow the prompts. Please note that sometimes the “submit” button will still be grayed out even after filling in
+    all the fields. This is a bug with the webpage – please re-select your product edition and you should see an active
+    “submit” button.</li>
+</ol>
+<h2><a id="_Toc468453847"></a>How to install .NET Framework</h2>
+<h3>How to Install Microsoft .NET Framework 3.5.1 </h3>
+<ol>
+  <li>Go to <strong>Start</strong>-&gt;<strong>All Programs</strong>-&gt;<strong>Administrative
+      Tools</strong>-&gt;<strong>Server Manager</strong>-&gt;<strong>Features</strong>-&gt;<strong>Add
+      Features</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_292.jpg" /></p>
+<ol>
+  <li>Select <strong>.NET Framework 3.5.1</strong> <strong>Features</strong> dialog box.</li>
+</ol>
+<p><img src="./html_doc_images/img_293.jpg" /></p>
+<ol>
+  <li>Click <strong>Add Required Roles Services </strong>in pop-up window.</li>
+</ol>
+<p><img src="./html_doc_images/img_294.jpg" /></p>
+<ol>
+  <li>Click <strong>Next </strong>in <strong>Add Features Wizard</strong> dialog box.</li>
+</ol>
+<p><img src="./html_doc_images/img_295.jpg" /></p>
+<ol>
+  <li>Click <strong>Next</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_296.jpg" /></p>
+<ol>
+  <li>Click <strong>Next.</strong></li>
+</ol>
+<p><img src="./html_doc_images/img_297.jpg" /></p>
+<ol>
+  <li>Click <strong>Install.</strong></li>
+</ol>
+<p><img src="./html_doc_images/img_298.jpg" /></p>
+<ol>
+  <li>Click <strong>Close </strong>to finish installation.</li>
+</ol>
+<p><img src="./html_doc_images/img_299.jpg" /></p>
+<h3><a id="_How_to_install_9"></a><a id="_Toc192064896"></a><a id="_Toc197937840"></a><a id="_Toc198118796"></a><a
+    id="_Toc202285082"></a><a id="_Toc204053389"></a><a id="_Toc205352707"></a><a id="_Toc225224631"></a><a
+    id="_Toc240357689"></a>How to install Microsoft .NET Framework 4.0</h3>
+<p>Note: .NET Framework 4.0 will be installed during the installation of SQL Server Denali CTP3 or Visual Studio 2010
+  Ultimate. So if you have installed SQL Server Denali CTP3 or Visual Studio 2010 Ultimate you don’t need to install
+  .NET Framework 4.0 separately.</p>
+<ol>
+  <li>Double click <strong>dotNetFx40_Full_x86_x64.exe </strong>and extract files. Please choose “<strong>I have read
+      and accept the license terms”</strong>, and then click “<strong>Install”</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_300.jpg" /></p>
+<ol>
+  <li>Wait for some minutes.</li>
+</ol>
+<p><img src="./html_doc_images/img_301.jpg" /></p>
+<ol>
+  <li>Click “<strong>Finish”</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_302.jpg" /></p>
+<ol>
+  <li>When the figure below is shown, click “<strong>Restart Now” </strong>to restart the computer.</li>
+</ol>
+<p><img src="./html_doc_images/img_303.jpg" /></p>
+<h2><a id="_Toc468453848"></a>How to install Microsoft Network Monitor 3.4</h2>
+<h3>How to install Microsoft Network Monitor 3.4</h3>
+<ol>
+  <li>Double-click the <strong>netmon.msi</strong>.</li>
+  <li>Click <strong>Next</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_304.jpg" /></p>
+<ol>
+  <li>Choose <strong>I accept the terms in the License Agreement</strong>, and then click <strong>Next</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_305.jpg" /></p>
+<ol>
+  <li>Choose <strong>Use Microsoft Update when I check for updates (recommended), </strong>and then click
+    <strong>Next</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_306.jpg" /></p>
+<ol>
+  <li>Click <strong>Typical</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_307.jpg" /></p>
+<ol>
+  <li>Click <strong>Install</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_308.jpg" /></p>
+<ol>
+  <li>Click <strong>Finish</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_309.jpg" /></p>
+<h3><a id="_How_to_install_2"></a><a id="_How_to_install_3"></a><a id="_Toc232424470"></a><a id="_Toc233704022"></a><a
+    id="_Toc234309826"></a><a id="OLE_LINK15"></a><a id="OLE_LINK16"></a><a id="_Toc204053390"></a><a
+    id="_Toc205352708"></a><a id="_Toc208137793"></a><a id="_Toc208205719"></a><a id="_Toc208205938"></a><a
+    id="_Toc208222248"></a><a id="_Toc221709633"></a>How to install Microsoft Network Monitor Parsers</h3>
+<ol>
+  <li>Double-click the <strong>Microsoft_ Parsers.exe</strong>.</li>
+  <li>Click <strong>Next</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_310.jpg" /></p>
+<ol>
+  <li>Please read the following license agreement carefully, if you accept the license agreement, please choose
+    <strong>I accept the terms in the License Agreement</strong>, and then click <strong>Next</strong>. (If you select
+    <strong>I do not accept the license terms</strong> <strong>in the License Agreement</strong>, Microsoft Network
+    Monitor 3.4 Installation Wizard will be ended and you will not able to install it successfully.)</li>
+</ol>
+<p><img src="./html_doc_images/img_311.jpg" /></p>
+<ol>
+  <li>Select <strong>Yes</strong>, click <strong>Next</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_312.jpg" /></p>
+<ol>
+  <li>Click <strong>Typical</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_313.jpg" /></p>
+<ol>
+  <li>Click <strong>Install</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_314.jpg" /></p>
+<ol>
+  <li>Click <strong>Finish</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_315.jpg" /></p>
+<h2><a id="_Toc310940925"></a><a id="_Toc468453849"></a>How to Install Protocol Test Framework</h2>
+<ol>
+  <li>Double-click the <strong>ProtocolTestFramework.msi.</strong></li>
+  <li>Click <strong>Next</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_316.jpg" /></p>
+<ol>
+  <li>Choose <strong>I accept the terms in the License Agreement</strong>, and then click <strong>Next</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_317.jpg" /></p>
+<ol>
+  <li>Click <strong>Install the Software</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_318.jpg" /></p>
+<ol>
+  <li>Click <strong>Next</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_319.jpg" /></p>
+<ol>
+  <li>Click<strong> Install</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_320.jpg" /></p>
+<ol>
+  <li>Click <strong>Finish</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_321.jpg" /></p>
+<h2><a id="_Toc198118797"></a><a id="_Toc202285083"></a><a id="_Toc204053391"></a><a id="_Toc205352709"></a><a
+    id="_Toc208137794"></a><a id="_Toc208205720"></a><a id="_Toc208205939"></a><a id="_Toc208222249"></a><a
+    id="_Toc221709634"></a><a id="_Toc295725396"></a><a id="_Toc468453850"></a>How to Install Protocol Test Suites
+  Library</h2>
+<ol>
+  <li><a id="OLE_LINK7"></a><a id="OLE_LINK8"></a>Double-click the <strong>ProtocolTestSuitesLibrary.msi</strong>.</li>
+  <li><a id="OLE_LINK5"></a><a id="OLE_LINK6"></a>Click <strong>Next</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_322.jpg" /></p>
+<ol>
+  <li>Choose <strong>I accept the terms in the License Agreement</strong>, and then click <strong>Next</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_323.jpg" /></p>
+<ol>
+  <li>Click <strong>Next</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_324.jpg" /></p>
+<ol>
+  <li>Click <strong>Install</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_325.jpg" /></p>
+<ol>
+  <li>Click <strong>Finish</strong>.</li>
+</ol>
+<p><a id="_How_to_install_5"></a><img src="./html_doc_images/img_326.jpg" /></p>
+<h2><a id="_Toc295725397"></a><a id="_Toc468453851"></a>How to Install Spec Explorer </h2>
+<ol>
+  <li>Double-click the <strong>SpecExplorer.msi</strong>.</li>
+  <li>Choose <strong>I accept the terms in the License Agreement</strong>, and then click <strong>Install</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_327.jpg" /></p>
+<ol>
+  <li>The installation will go on automatically.</li>
+</ol>
+<p><img src="./html_doc_images/img_328.jpg" /></p>
+<ol>
+  <li>Click <strong>Finish.</strong></li>
+</ol>
+<p><img src="./html_doc_images/img_329.jpg" /></p>
+<h2><a id="_How_to_Install_6"></a><a id="_Toc468453852"></a>How to replace Protocol Test Framework Reference Assemblies
+</h2>
+<h3>Uninstall old version Protocol Test Framework</h3>
+<ol>
+  <li>Close Visual Studio if it is open.</li>
+  <li>Click <strong>Start-&gt;Control Panel-&gt;Uninstall a program</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_330.jpg" alt="C:\Users\v-lixgu\Desktop\New folder\1.png" /></p>
+<ol>
+  <li>Select <strong>Protocol Test Framework</strong> and click <strong>Uninstall</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_331.jpg" alt="C:\Users\v-lixgu\Desktop\New folder\2.png" /></p>
+<ol>
+  <li>Click <strong>Yes</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_332.jpg" alt="C:\Users\v-lixgu\Desktop\New folder\3.png" /></p>
+<h3>Install new version Protocol Test Framework</h3>
+<ol>
+  <li>Double-click the <strong>ProtocolTestFramework.msi</strong>.</li>
+  <li>Click <strong>Next</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_333.jpg" /></p>
+<ol>
+  <li>Choose <strong>I accept the terms in the License Agreement</strong>, and then click <strong>Next</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_334.jpg" alt="C:\Users\v-ww\Desktop\4.13\PTF2.jpg" /></p>
+<ol>
+  <li>Click <strong>Next</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_335.jpg" alt="C:\Users\v-ww\Desktop\4.13\PTF3.jpg" /></p>
+<ol>
+  <li>Click <strong>Install</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_336.jpg" alt="C:\Users\v-ww\Desktop\4.13\PTF4.jpg" /></p>
+<ol>
+  <li>Click <strong>Finish</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_337.jpg" alt="C:\Users\v-ww\Desktop\4.13\PTF5.jpg" /></p>
+<h3>Remove the Reference Assemblies of old version Protocol Test Framework</h3>
+<ol>
+  <li>Double click .sln file.</li>
+  <li>Unfold <strong>References</strong> in <strong>ServerAdapter</strong> project. Right click
+    <strong>Micorsoft.Protocols.TestTools</strong> and click <strong>Remove</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_338.jpg" alt="C:\Users\v-jiluo\Desktop\1.png" /></p>
+<ol>
+  <li>Unfold <strong>References</strong> in <strong>ServerTestSuite</strong> project. Right click
+    <strong>Micorsoft.Protocols.TestTools</strong> and click <strong>Remove</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_339.jpg" alt="C:\Users\v-jiluo\Desktop\2.png" /></p>
+<ol>
+  <li>Unfold <strong>References</strong> in <strong>ServerTestSuite</strong> project. Right click
+    <strong>Micorsoft.Protocols.TestTools.VSTS</strong> and click <strong>Remove</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_340.jpg" alt="C:\Users\v-jiluo\Desktop\3.png" /></p>
+<h3>Add the Reference Assemblies of new version Protocol Test Framework</h3>
+<ol>
+  <li>Right click <strong>References</strong> in <strong>ServerAdapter</strong> click <strong>Add Reference</strong>.
+  </li>
+</ol>
+<p><img src="./html_doc_images/img_341.jpg" alt="C:\Users\v-jiluo\Desktop\4.png" /></p>
+<ol>
+  <li>Select <strong>Microsoft.Protocols.TestTools</strong> and click <strong>OK</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_342.jpg" alt="C:\Users\v-lixgu\Desktop\1.png" /></p>
+<ol>
+  <li>Right click <strong>References</strong> in <strong>ServerTestSuite</strong> click <strong>Add Reference</strong>.
+  </li>
+</ol>
+<p><img src="./html_doc_images/img_343.jpg" alt="C:\Users\v-jiluo\Desktop\6.png" /></p>
+<ol>
+  <li>Select <strong>Microsoft.Protocols.TestTools</strong> and click <strong>OK</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_344.jpg" alt="C:\Users\v-lixgu\Desktop\1.png" /></p>
+<ol>
+  <li>Right click <strong>References</strong> in <strong>ServerTestSuite</strong> click <strong>Add Reference</strong>.
+  </li>
+</ol>
+<p><img src="./html_doc_images/img_345.jpg" alt="C:\Users\v-jiluo\Desktop\6.png" /></p>
+<ol>
+  <li>Select <strong>Microsoft.Protocols.TestTools.VSTS</strong> and click <strong>OK</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_346.jpg" alt="C:\Users\v-lixgu\Desktop\2.png" /></p>
+<h2><a id="_Toc468453853"></a>How to install Microsoft SharePoint Server 2010 SP1 for Farm Installation</h2>
+<h3>Run Microsoft SharePoint Products and Technologies 2010 Preparation Tool</h3>
+<ol>
+  <li>On the <strong>Start </strong>page, click Install software prerequisites. </li>
+</ol>
+<p><img src="./html_doc_images/img_347.jpg" alt="0.jpg" /></p>
+<ol>
+  <li>On the <strong>Welcome to the Microsoft SharePoint Products and Technologies 2010 Preparation Tool</strong> page,
+    click Next.</li>
+</ol>
+<p><img src="./html_doc_images/img_348.jpg" alt="1.jpg" /></p>
+<ol>
+  <li>Select <strong>I accept the terms of the License Agreement(s) </strong>and click <strong>Next</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_349.jpg" alt="1.jpg" /></p>
+<ol>
+  <li>On <strong>the Installation Complete</strong> page, click Finish.</li>
+</ol>
+<p><img src="./html_doc_images/img_350.jpg" alt="3.jpg" /></p>
+<h3>Install Microsoft SharePoint Server 2010 SP1</h3>
+<ol>
+  <li>On the Start page, click Install Office SharePoint Server. </li>
+</ol>
+<p><img src="./html_doc_images/img_351.jpg" /></p>
+<ol>
+  <li>On the <strong>Enter your Product Key</strong> page, Enter your <strong>Product Key</strong> and click
+    <strong>Continue</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_352.jpg" /></p>
+<ol>
+  <li> On the <strong>Read the Microsoft Software License Terms</strong> page, review the terms, select <strong>I accept
+      the terms of this agreement</strong> check box, and then click <strong>Continue</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_353.jpg" /></p>
+<ol>
+  <li>On the <strong>Choose the installation you want</strong> page, click <strong>Server Farm</strong>. </li>
+</ol>
+<p><img src="./html_doc_images/img_354.jpg" /></p>
+<ol>
+  <li>On the <strong>Server Type</strong> tab, select <strong>Complete, </strong>click<strong> Install Now.</strong>
+  </li>
+</ol>
+<p><img src="./html_doc_images/img_355.jpg" /></p>
+<ol>
+  <li>When Setup finishes, unselect <strong>Run the SharePoint Products and Technologies Configuration Wizard
+      now</strong>, click <strong>Close</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_356.jpg" /></p>
+<h2><a id="_Toc468453854"></a>How to Install Message Analyzer </h2>
+<ol>
+  <li>Double-click the <strong>MessageAnalyzer64.msi</strong>.</li>
+  <li>Click <strong>Next</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_357.jpg" /></p>
+<ol>
+  <li>Select the check box to accept all the license, click <strong>Next</strong>.</li>
+</ol>
+<p><img src="./html_doc_images/img_358.jpg" /></p>
+<ol>
+  <li>Select <strong>Yes</strong> and click <strong>Next</strong>.<img src="./html_doc_images/img_359.jpg" /></li>
+  <li>Click <strong>Install</strong> to start.<img src="./html_doc_images/img_360.jpg" /></li>
+  <li>Click <strong>Finish</strong>.<img src="./html_doc_images/img_361.jpg" /></li>
+</ol>
